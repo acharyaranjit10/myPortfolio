@@ -1,0 +1,155 @@
+/* Base styles */
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+/* Expanded poem modal */
+.expanded-poem-container {
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  .expanded-poem-container {
+    scrollbar-width: thin; 
+    scrollbar-color: #4fd1c5 #e2e8f0; 
+  }
+}
+
+.expanded-poem-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.expanded-poem-container::-webkit-scrollbar-thumb {
+  background-color: #008080;
+  border-radius: 3px;
+}
+
+/* Poem content container */
+.poem-content-container {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.poem-content-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.poem-content-container::-webkit-scrollbar-thumb {
+  background-color: #008080;
+  border-radius: 3px;
+}
+
+/* Audio controls */
+.audio-controls {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.dark .audio-controls {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Track styles */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ddd;
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: #ddd;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Thumb styles */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #008080;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+  border: 1px solid #006666;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #008080;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #006666;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Small progress slider (grid view) */
+.progress-slider-small {
+  height: 3px;
+}
+
+.progress-slider-small::-webkit-slider-thumb {
+  width: 0;
+  height: 0;
+}
+
+/* Dark mode styles */
+.dark input[type="range"]::-webkit-slider-runnable-track {
+  background: #4a5568;
+}
+
+.dark input[type="range"]::-moz-range-track {
+  background: #4a5568;
+}
+
+.dark input[type="range"]::-webkit-slider-thumb {
+  background: #a7f3d0;
+  border-color: #86efac;
+}
+
+.dark input[type="range"]::-moz-range-thumb {
+  background: #a7f3d0;
+  border-color: #86efac;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .expanded-poem-container {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .controls {
+    gap: 4px;
+  }
+  
+  .volume-slider {
+    width: 60px;
+  }
+}
