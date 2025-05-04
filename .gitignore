@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules
+
+# Build output directories
+
+dist-ssr # Likely for server-side rendering, keep if relevant
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local # Catch-all for other local environment files
+
+# Cache and temporary files
+.cache
+.DS_Store # macOS folder settings
+Thumbs.db # Windows folder settings
+
+# Editor and IDE specific files
+.vscode/*
+!.vscode/extensions.json # Keep recommended extensions
+.idea
+*.suo # Visual Studio solution user options
+*.ntvs* # Visual Studio files
+*.njsproj # Node.js project file for Visual Studio
+*.sln # Visual Studio solution file
+*.sw? # Swap files (Vim, etc.)
+
+# Package lock files (important to keep!)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional: Ignore build cache directories (if your setup uses them)
+.vite-cache
+
+# Optional: Ignore coverage reports
+coverage
