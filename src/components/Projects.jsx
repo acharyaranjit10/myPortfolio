@@ -7,12 +7,12 @@ const projects = [
   { name: "Matrix-Calculator", img: "img/matrix.png", link: "https://ranjit-matrix-calculator.vercel.app/" },
   { name: "Hangman", img: "img/hangman.png", link: "https://hangman-ranjit.vercel.app/" },
   { name: "CV Builder", img: "img/cv-b.png", link: "https://cv-builder-ranjit.vercel.app/" },
+  { name: "To-Do List", img: "img/todo.png", link: "https://todo-list-ranjit.vercel.app/" },
   { name: "Password-Generator", img: "img/passgen.png", link: "https://react-pass-generator-orcin.vercel.app/" },
   { name: "Tic-Tac-Toe", img: "img/tic.png", link: "https://tic-tac-toe-rust-six.vercel.app/" },
   { name: "(React) Currency-Converter", img: "img/currReact.png", link: "https://react-currency-exchange-44mt.vercel.app/" },
-  { name: "To-Do List", img: "img/todo.png", link: "https://to-do-list-coral-six.vercel.app/" },
-  { name: "Calculator", img: "img/calc.png", link: "https://basic-calculator-amber.vercel.app/" },
-  { name: "Rock-Paper-Scissors", img: "img/rps.png", link: "https://rock-paper-scissors-j45w.vercel.app/" },
+  // { name: "Calculator", img: "img/calc.png", link: "https://basic-calculator-amber.vercel.app/" },
+  // { name: "Rock-Paper-Scissors", img: "img/rps.png", link: "https://rock-paper-scissors-j45w.vercel.app/" },
   { name: "Currency-Converter", img: "img/curr.png", link: "https://currency-converter-one-khaki.vercel.app/" }
 ];
 
