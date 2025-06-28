@@ -1,78 +1,110 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 
 const projects = [
-  { name: "Vastra Vatika", img: "img/logo.png", link: "https://vastravatika.vercel.app/" },
-  { name: "Spotify Clone", img: "img/spotify.png", link: "https://spotify-clone-sand-chi.vercel.app/" },
-  { name: "Weather", img: "img/weather.png", link: "https://weather-app-gamma-ruddy-97.vercel.app/" },
-  { name: "Matrix-Calculator", img: "img/matrix.png", link: "https://ranjit-matrix-calculator.vercel.app/" },
-  { name: "Hangman", img: "img/hangman.png", link: "https://hangman-ranjit.vercel.app/" },
-  { name: "CV Builder", img: "img/cv-b.png", link: "https://cv-builder-ranjit.vercel.app/" },
-  { name: "To-Do List", img: "img/todo.png", link: "https://todo-list-ranjit.vercel.app/" },
-  { name: "Password-Generator", img: "img/passgen.png", link: "https://react-pass-generator-orcin.vercel.app/" },
-  { name: "Tic-Tac-Toe", img: "img/tic.png", link: "https://tic-tac-toe-rust-six.vercel.app/" },
-  { name: "(React) Currency-Converter", img: "img/currReact.png", link: "https://react-currency-exchange-44mt.vercel.app/" },
-  // { name: "Calculator", img: "img/calc.png", link: "https://basic-calculator-amber.vercel.app/" },
-  // { name: "Rock-Paper-Scissors", img: "img/rps.png", link: "https://rock-paper-scissors-j45w.vercel.app/" },
-  { name: "Currency-Converter", img: "img/curr.png", link: "https://currency-converter-one-khaki.vercel.app/" }
+  {
+    name: "Vastra Vatika",
+    img: "img/vastra_preview.png",
+    link: "https://vastravatika.vercel.app/",
+    code: "https://github.com/acharyaranjit10/vastra-vatika",
+    desc: "E-commerce clothing store for Nepali ethnic wear.",
+    tech: ["React", "Tailwind", "MongoDB"],
+  },
+  {
+    name: "Spotify Clone",
+    img: "img/spotify_preview.png",
+    link: "https://spotify-clone-sand-chi.vercel.app/",
+    code: "https://github.com/acharyaranjit10/spotify-clone",
+    desc: "Frontend UI clone of Spotify with music-style layout.",
+    tech: ["React", "Tailwind"],
+  },
+  {
+    name: "Weather App",
+    img: "img/weather_preview.png",
+    link: "https://weather-app-gamma-ruddy-97.vercel.app/",
+    code: "https://github.com/acharyaranjit10/weather-app",
+    desc: "Real-time weather app using OpenWeather API.",
+    tech: ["React", "Tailwind", "API"],
+  },
+  {
+    name: "Matrix Calculator",
+    img: "img/matrix_preview1.png",
+    link: "https://ranjit-matrix-calculator.vercel.app/",
+    code: "https://github.com/acharyaranjit10/matrix-calculator",
+    desc: "Do matrix operations from basic to advanced easily.",
+    tech: ["React", "Tailwind"],
+  },
 ];
 
 const Projects = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener
-    window.addEventListener('resize', handleResize);
-
-    // Clean up
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const displayedProjects = (isMobile && !showAll) ? projects.slice(0, 6) : projects;
-
   return (
-    <section id="projects" className="bg-[#033e65] flex flex-col justify-center items-center min-h-[60vh] text-center text-[#d0e6fb]">
-      <div className="head-cont bg-[#033e65] text-center text-white text-2xl pt-4 font-bold mb-10">
-        <h1 className="relative inline-block pb-1">
+    <section id="projects" className="bg-[#033e65] py-12 px-4 text-white">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-bold relative inline-block pb-1">
           Projects
           <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[110%] h-[3px] bg-orange-400"></span>
-        </h1>
+        </h2>
+        <p className="mt-2 text-[#d0e6fb] text-sm">
+          Some selected works built with modern tools.
+        </p>
       </div>
-      
-      <div className="flex flex-wrap justify-center items-center min-h-[40vh] w-full px-4 mb-4">
-        {displayedProjects.map((project, index) => (
-          <a 
+
+      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {projects.map((project, index) => (
+          <div
             key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="h-[150px] w-[calc(50%-1rem)] md:w-[150px] m-2 md:m-4 rounded-lg text-[#a9cdee] text-center transition-all duration-300 hover:scale-105 flex flex-col items-center"
+            className="bg-[#022c47] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
           >
-            <img 
-              src={project.img} 
-              alt={project.name} 
-              className="h-[80%] w-full object-contain p-1" 
+            <img
+              src={project.img}
+              alt={project.name}
+              className="w-full h-48 object-cover"
             />
-            <span className="text-sm md:text-base px-1">{project.name}</span>
-          </a>
+            <div className="p-5">
+              <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+              <p className="text-sm text-[#d0e6fb] mb-4">{project.desc}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((t, i) => (
+                  <span
+                    key={i}
+                    className="bg-[#054570] text-white text-xs px-2 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-orange-400 hover:bg-orange-500 text-black px-4 py-2 rounded font-semibold"
+                >
+                  Demo
+                </a>
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-orange-400 hover:bg-orange-500 hover:text-black text-orange-400 px-4 py-2 rounded font-semibold"
+                >
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
-      {isMobile && projects.length > 6 && (
-        <button 
-          onClick={() => setShowAll(!showAll)}
-          className=" mb-1 px-6 py-2  text-white rounded-lg hover:text-orange-300 transition-colors duration-300"
+      <div className="text-center mt-10">
+        <a
+          href="https://github.com/acharyaranjit10"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-orange-400 hover:underline font-semibold"
         >
-          {showAll ? 'Show Less' : 'See More'}
-        </button>
-      )}
+          View More Projects on GitHub →
+        </a>
+      </div>
     </section>
   );
 };
