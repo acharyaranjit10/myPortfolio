@@ -32,7 +32,7 @@ function App() {
             }
           />
           {/* Poetry Page Route */}
-          <Route path="/poetry" element={<PoetryPage />} />
+          {/* <Route path="/poetry" element={<PoetryPage />} /> */}
         </Routes>
         
         <Footer />

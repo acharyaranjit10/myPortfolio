@@ -2,20 +2,20 @@ import React from 'react';
 
 const projects = [
   {
+    name: "Smart Palika",
+    img: "img/smart_preview.png",
+    link: "https://smart-palika.onrender.com/",
+    code: "https://github.com/acharyaranjit10/Smart-Palika",
+    desc: "Civic complaint portal for local municipalities in Nepal.",
+    tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+  },
+  {
     name: "Vastra Vatika",
     img: "img/vastra_preview.png",
-    link: "https://vastravatika.vercel.app/",
+    link: "https://vastra-vatika-delta.vercel.app/",
     code: "https://github.com/acharyaranjit10/vastra-vatika",
     desc: "E-commerce clothing store for Nepali ethnic wear.",
     tech: ["React", "Tailwind", "MongoDB"],
-  },
-  {
-    name: "Spotify Clone",
-    img: "img/spotify_preview.png",
-    link: "https://spotify-clone-sand-chi.vercel.app/",
-    code: "https://github.com/acharyaranjit10/spotify-clone",
-    desc: "Frontend UI clone of Spotify with music-style layout.",
-    tech: ["React", "Tailwind"],
   },
   {
     name: "Weather App",

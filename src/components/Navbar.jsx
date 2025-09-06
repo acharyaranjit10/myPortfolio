@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -39,10 +40,10 @@ const Navbar = () => {
   const handleNavClick = (id) => {
     setIsActive(false); // Close the mobile menu
 
-    if (location.pathname !== '/') {
-      // If not on home page, navigate to home first then scroll
-      window.location.href = `/#${id}`;
-    } else {
+  if (location.pathname !== '/') {
+  navigate(`/#${id}`);
+}
+ else {
       // Normal smooth scroll behavior
       const section = document.getElementById(id);
       if (section) {
